@@ -10,7 +10,7 @@ A Control4 DriverWorks driver for controlling Android TV / Google TV devices usi
 
 This driver integrates Android TV and Google TV devices into a Control4 OS 3.x smart home system. It communicates over a native TLS-encrypted TCP connection (port 6466 for commands, port 6467 for pairing), enabling full remote control, power management, app launching, and real-time feedback — all without requiring ADB debugging or Developer Options on the TV.
 
-The included **AndroidTV_Tool** Windows utility handles certificate extraction and RSA public key retrieval needed during the one-time pairing setup.
+The included **AndroidTV_Tool** Windows utility handles certificate extraction and RSA public key retrieval needed during the one-time pairing setup along with an app list tool (ADB needs to be enabled on device to use but can be turned back off once data is captured).
 
 ---
 
@@ -76,7 +76,7 @@ Use `AndroidTV_Tool/TV_Toolkit.exe` on a Windows PC connected to the same networ
 1. Launch **TV_Toolkit.exe**
 2. Enter the Android TV device IP address
 3. Click **Get Public Key**
-4. Copy the **Modulus** (colon-separated hex string) and **Exponent** (typically `65537`)
+4. Copy the **Modulus**  and **Exponent** (typically `65537`)
 
 Alternatively, using OpenSSL from a command prompt on any networked machine:
 
