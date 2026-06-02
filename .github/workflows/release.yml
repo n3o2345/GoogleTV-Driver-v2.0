@@ -17,26 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Get version from tag
-        id: version
-        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
-
-      - name: Package driver (.c4z)
-        run: |
-          cp driver/Android_v2.0.c4z AndroidTV_v${{ steps.version.outputs.VERSION }}.c4z
-
-      - name: Package AndroidTV_Tool (Windows utility)
-        run: |
-          cd AndroidTV_Tool
-          zip -r ../AndroidTV_Tool_v${{ steps.version.outputs.VERSION }}.zip .
-          cd ..
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          name: "AndroidTV Control4 Driver v${{ steps.version.outputs.VERSION }}"
+          name: "AndroidTV Control4 Driver ${{ github.ref_name }}"
           body: |
-            ## AndroidTV Control4 Driver v${{ steps.version.outputs.VERSION }}
+            ## AndroidTV Control4 Driver ${{ github.ref_name }}
 
             Control4 DriverWorks driver for Android TV / Google TV using the Android TV Remote Service v2 protocol.
 
@@ -44,8 +30,8 @@ jobs:
 
             | File | Description |
             |---|---|
-            | `AndroidTV_v${{ steps.version.outputs.VERSION }}.c4z` | Control4 driver — install this in Composer |
-            | `AndroidTV_Tool_v${{ steps.version.outputs.VERSION }}.zip` | Windows utility for RSA key extraction (required for pairing setup) |
+            | `AndroidTV_v2.0.c4z` | Control4 driver — install this in Composer |
+            | `AndroidTV_Tool_v2.0.zip` | Windows utility for RSA key extraction (required for pairing setup) |
 
             ### Quick Start
             1. Install the `.c4z` driver in Control4 Composer
@@ -58,7 +44,7 @@ jobs:
             ---
             > Driver authored by **Greg Moerler**.
           files: |
-            AndroidTV_v${{ steps.version.outputs.VERSION }}.c4z
-            AndroidTV_Tool_v${{ steps.version.outputs.VERSION }}.zip
+            releases/AndroidTV_v2.0.c4z
+            releases/AndroidTV_Tool_v2.0.zip
           draft: false
           prerelease: false
