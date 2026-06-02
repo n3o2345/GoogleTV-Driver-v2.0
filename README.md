@@ -98,7 +98,7 @@ adb shell "openssl s_client -connect 127.0.0.1:6467 2>/dev/null </dev/null | ope
 
 In the driver's Properties panel in Control4 Composer:
 
-- **Device Public Key Modulus** → paste the colon-separated hex modulus
+- **Device Public Key Modulus** → paste the hex modulus
 - **Device Public Key Exponent** → enter `65537` (or the value from the certificate)
 
 ### Step 3 — Pair
