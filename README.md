@@ -13,7 +13,7 @@ This driver integrates Android TV and Google TV devices into a Control4 OS 3.x s
 The included **AndroidTV_Tool** Windows utility handles two tasks:
 - **Extract Public Key** — retrieves the RSA certificate from the device (required for pairing, no ADB needed)
 - **Extract App List** — scans the device for all installed app package names (requires ADB to be enabled on the device; ADB can be turned back off once the list is captured)
-- **NOTE** - This will flag a false positive. Trojan.MSIL/Tiny is a heuristic signature that flags small .NET executables — and TV_Toolkit.exe being a small C#/VB.NET GUI tool that bundles ADB and OpenSSL would fit that profile exactly. Scanners see "tiny .NET binary + network activity + ADB" and flag it.
+- **NOTE** - This will flag a false positive. Trojan.MSIL/Tiny is a heuristic signature that flags small .NET executables — and TV_Toolkit.exe being a small C#/VB.NET GUI tool that bundles ADB and OpenSSL would fit that profile exactly. Scanners see "tiny .NET binary + network activity + ADB" and flag it. **If you are worried about don't use the tool, the manual commands are below.**
 ---
 
 ## Features
