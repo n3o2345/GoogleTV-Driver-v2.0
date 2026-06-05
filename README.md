@@ -2,7 +2,7 @@
 
 A Control4 DriverWorks driver for controlling Android TV / Google TV devices using the **Android TV Remote Service v2** protocol over TCP — no ADB or Developer Options required for standard operation.
 
-> **Credit:** Driver created by **Greg Moerler**. This repository is a distribution of his work.
+> **Credit:** Driver created by **Greg Moerler**. This repository is a fork of his work.
 
 ---
 
